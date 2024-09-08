@@ -1,0 +1,15 @@
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/bin/Debug/net8.0/Restaurants.Application.deps.json
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/bin/Debug/net8.0/Restaurants.Application.dll
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/bin/Debug/net8.0/Restaurants.Application.pdb
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/bin/Debug/net8.0/Restaurants.Domain.dll
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/bin/Debug/net8.0/Restaurants.Domain.pdb
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.csproj.AssemblyReference.cache
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.AssemblyInfoInputs.cache
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.AssemblyInfo.cs
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.csproj.CoreCompileInputs.cache
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaura.6AB96A7C.Up2Date
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.dll
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/refint/Restaurants.Application.dll
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.pdb
+/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/ref/Restaurants.Application.dll
