@@ -9,3 +9,4 @@
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/obj/Debug/net8.0/refint/Restaurants.Domain.dll
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/obj/Debug/net8.0/Restaurants.Domain.pdb
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/obj/Debug/net8.0/ref/Restaurants.Domain.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Domain/obj/Debug/net8.0/Restaurants.Domain.sourcelink.json

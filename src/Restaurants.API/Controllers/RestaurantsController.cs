@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Restaurants.Application.DTOs;
 using Restaurants.Application.Services;
 
 namespace Restaurants.API.Controllers
@@ -13,14 +14,22 @@ namespace Restaurants.API.Controllers
             return Ok(restaurants);
         }
 
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<IActionResult> GetRestaurantByIdAsync([FromRoute] int id){
+        [HttpGet("{id}", Name = "GetRestaurant")]
+        public async Task<IActionResult> GetRestaurantByIdAsync(int id){
             var restaurant = await restaurantsService.GetRestaurantAsync(id);
             if(restaurant == null){
                 return NotFound($"Restaurant with id {id} not found");
             }
             return Ok(restaurant);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateRestaurantAsync([FromBody] CreateRestaurantDTO createRestaurantDTO){
+            var newItem = await restaurantsService.CreateRestaurantAsync(createRestaurantDTO);
+            if(newItem == null){
+                return Conflict("Server couldn't create requested resource");
+            }
+            return CreatedAtRoute("GetRestaurant", new{id = newItem.Id}, newItem);
         }
     }
 }

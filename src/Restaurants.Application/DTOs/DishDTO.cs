@@ -10,14 +10,4 @@ public class DishDTO
     public required string Description { get; set; }
     public decimal Price { get; set; }
     public int? Kcal { get; set; }
-
-    public static DishDTO FromEntity(Dish dish){
-        return new DishDTO{
-            Id = dish.Id,
-            Name = dish.Name,
-            Description = dish.Description,
-            Price = dish.Price,
-            Kcal = dish.Kcal
-        };
-    }
 }

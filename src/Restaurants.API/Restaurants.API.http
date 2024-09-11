@@ -1,6 +1,17 @@
-@Restaurants.API_HostAddress = http://localhost:5268
+@Restaurants_API_HostAddress = http://localhost:5268
 
-GET {{Restaurants.API_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{Restaurants_API_HostAddress}}/api/restaurants
+Content-Type: application/json
 
-###
+{
+    "Name": "Test Restaurant",
+    "Description": "Test Restaurant Description",
+    "Category": 3,
+    "HasDelivery": true,
+    "ContactNumber": "123",
+    "ContactEmail": "test@restaurant",
+    "City": "Ankara",
+    "Street": "Test Street",
+    "PostalCode": "0606",
+    "Tables": 8
+}

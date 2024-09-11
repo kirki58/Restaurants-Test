@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.35.0": {
         "type": "package",
         "dependencies": {
@@ -991,6 +1007,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "AutoMapper": "13.0.1",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.1",
           "Restaurants.Domain": "1.0.0"
         },
@@ -1031,6 +1048,21 @@
     }
   },
   "libraries": {
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
+      ]
+    },
     "Azure.Core/1.35.0": {
       "sha512": "hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==",
       "type": "package",
@@ -2810,11 +2842,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/Restaurants.API.csproj",
+      "projectUniqueName": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/Restaurants.API.csproj",
       "projectName": "Restaurants.API",
-      "projectPath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/Restaurants.API.csproj",
+      "projectPath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/Restaurants.API.csproj",
       "packagesPath": "/home/kirki/.nuget/packages/",
-      "outputPath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/obj/",
+      "outputPath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/kirki/.nuget/NuGet/NuGet.Config"
@@ -2829,11 +2861,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj": {
-              "projectPath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj"
+            "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj": {
+              "projectPath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj"
             },
-            "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Infrastructure/Restaurants.Infrastructure.csproj": {
-              "projectPath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Infrastructure/Restaurants.Infrastructure.csproj"
+            "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Infrastructure/Restaurants.Infrastructure.csproj": {
+              "projectPath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Infrastructure/Restaurants.Infrastructure.csproj"
             }
           }
         }
@@ -2842,11 +2874,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2871,7 +2898,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/kirki/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

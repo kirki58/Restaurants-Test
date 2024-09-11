@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8NVkipDKGoE=",
+  "dgSpecHash": "fd9TqHOkplp6WtumlqBEqrRA+LzyH/QYo1Ff4vzweJOMe/ag1Xo1xUgq7ZKS4SJiaA4iFRFHtfpPlHnYq1urYQ==",
   "success": true,
-  "projectFilePath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Infrastructure/Restaurants.Infrastructure.csproj",
+  "projectFilePath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Infrastructure/Restaurants.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "/home/kirki/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/home/kirki/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
     "/home/kirki/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

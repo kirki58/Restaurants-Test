@@ -28,7 +28,6 @@
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/obj/Debug/net8.0/Restaurants.API.pdb
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/obj/Debug/net8.0/Restaurants.API.genruntimeconfig.cache
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/obj/Debug/net8.0/ref/Restaurants.API.dll
-/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/obj/Debug/net8.0/Restaura.7AF479EB.Up2Date
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Azure.Core.dll
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Azure.Identity.dll
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
@@ -71,3 +70,6 @@
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Restaurants.Infrastructure.pdb
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/obj/Debug/net8.0/Restaurants.API.sourcelink.json
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/obj/Debug/net8.0/Restaurants.API.csproj.CopyComplete
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/AutoMapper.dll

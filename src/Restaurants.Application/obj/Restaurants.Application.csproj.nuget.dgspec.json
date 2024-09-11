@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj": {}
+    "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj": {}
   },
   "projects": {
-    "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj": {
+    "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj",
+        "projectUniqueName": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj",
         "projectName": "Restaurants.Application",
-        "projectPath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj",
+        "projectPath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj",
         "packagesPath": "/home/kirki/.nuget/packages/",
-        "outputPath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/",
+        "outputPath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/kirki/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj": {
-                "projectPath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj"
+              "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj": {
+                "projectPath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj"
               }
             }
           }
@@ -36,17 +36,16 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -68,18 +67,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/kirki/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj": {
+    "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj",
+        "projectUniqueName": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj",
         "projectName": "Restaurants.Domain",
-        "projectPath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj",
+        "projectPath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj",
         "packagesPath": "/home/kirki/.nuget/packages/",
-        "outputPath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/obj/",
+        "outputPath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/kirki/.nuget/NuGet/NuGet.Config"
@@ -100,11 +99,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -126,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/kirki/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PA+TJfoxYi0=",
+  "dgSpecHash": "Juy8v8gLOH15QuAp3XXUr38m+oxfdRUsq6NGFMBMbLZnixmhKRMH6m4T7K+hvHeKa8x/t9HS5r0+Snnuk/Y/1w==",
   "success": true,
-  "projectFilePath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.API/Restaurants.API.csproj",
+  "projectFilePath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/Restaurants.API.csproj",
   "expectedPackageFiles": [
+    "/home/kirki/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/home/kirki/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

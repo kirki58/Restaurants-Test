@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sO3biRc3PAk=",
+  "dgSpecHash": "Wy7Ryeu9Th9LZ1b2Vsc2mHAQaZSlqK0tpLaVaqHE/aDKMkb/FSIHyAKzJVsxQvKZzXtUxbuQW1I/vsAnNmuHuQ==",
   "success": true,
-  "projectFilePath": "/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj",
+  "projectFilePath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Domain/Restaurants.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

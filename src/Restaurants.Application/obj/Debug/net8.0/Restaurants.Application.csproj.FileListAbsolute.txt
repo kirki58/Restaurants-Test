@@ -8,8 +8,9 @@
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.AssemblyInfoInputs.cache
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.AssemblyInfo.cs
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.csproj.CoreCompileInputs.cache
-/home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaura.6AB96A7C.Up2Date
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.dll
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/refint/Restaurants.Application.dll
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.pdb
 /home/kirki/Documents/repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/ref/Restaurants.Application.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.sourcelink.json
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/obj/Debug/net8.0/Restaurants.Application.csproj.CopyComplete
