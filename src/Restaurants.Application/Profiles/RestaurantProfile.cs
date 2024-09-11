@@ -16,7 +16,10 @@ public class RestaurantProfile : Profile
                     City = src.City,
                     Street = src.Street,
                     PostalCode = src.PostalCode
-                }
+                }))
+            // Note that CreateDTO.Category string is already validated by FluentValidation before parsing
+            .ForMember(dest => dest.Category, opt => opt.MapFrom(
+                src => (RestaurantCategory) Enum.Parse(typeof(RestaurantCategory), src.Category)
             ));
 
         //Restaurant to RestaurantDTO

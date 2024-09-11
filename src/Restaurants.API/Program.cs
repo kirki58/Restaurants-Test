@@ -5,15 +5,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-// Custom extension method to configure infrastructure layer services.
-builder.Services.AddInfraStructure();
+builder.Services.AddControllers();
+
+// Aplication layer ServiceCollection Extension
 builder.Services.AddApplication();
 
-builder.Services.AddControllers();
+// Infrastructure layer ServiceCollection Extension
+builder.Services.AddInfraStructure();
 
 var app = builder.Build();
 
-// Seed initial data to DB
+// Infrastructure layer WebApplication Extension
 await app.UseInfrastructureAsync();
 
 // Configure the HTTP request pipeline.

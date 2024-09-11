@@ -7,7 +7,7 @@ public class CreateRestaurantDTO
 {
     public required string Name { get; set; }
     public required string Description { get; set; }
-    public RestaurantCategory Category { get; set; }
+    public required string Category { get; set; }
     public bool HasDelivery { get; set; }
     public string? ContactNumber { get; set; }
     public string? ContactEmail { get; set; }

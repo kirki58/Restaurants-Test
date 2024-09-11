@@ -15,7 +15,7 @@ namespace Restaurants.API.Controllers
         }
 
         [HttpGet("{id}", Name = "GetRestaurant")]
-        public async Task<IActionResult> GetRestaurantByIdAsync(int id){
+        public async Task<IActionResult> GetRestaurantByIdAsync([FromRoute]int id){
             var restaurant = await restaurantsService.GetRestaurantAsync(id);
             if(restaurant == null){
                 return NotFound($"Restaurant with id {id} not found");
