@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XeYSCO1C7144AtfvYGcwlRkTrItzMcTV8WDTvYIOARnlDhoHkdDu2WJDD4KjF1Ru4D0WScrHsnDCti5Nwrdlkw==",
+  "dgSpecHash": "E68Ddv9iRcj5QCsXUqGlAuwZpdS/7+TIlA7MXYGcthKiLJp1T/EYjUr8NMxTafIwrfklhvZ56n1e9Vfwxg04gg==",
   "success": true,
   "projectFilePath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Infrastructure/Restaurants.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "/home/kirki/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "/home/kirki/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/kirki/.nuget/packages/mediatr/12.4.1/mediatr.12.4.1.nupkg.sha512",
+    "/home/kirki/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.3/microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.codeanalysis.common/4.5.0/microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

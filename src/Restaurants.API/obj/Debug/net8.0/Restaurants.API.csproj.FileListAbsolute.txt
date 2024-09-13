@@ -77,3 +77,5 @@
 /home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
 /home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
 /home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/obj/Debug/net8.0/Restaurants.API.MvcApplicationPartsAssemblyInfo.cs
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/MediatR.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/MediatR.Contracts.dll

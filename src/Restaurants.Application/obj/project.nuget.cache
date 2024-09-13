@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "W7L+biL8seHxyL4ZQdM9hzBHAYxYTA659lJRyN5kCfzDV/AmyGmgD0nil/cjAsDW9VWJShBF+aPxorkeIB7PoA==",
+  "dgSpecHash": "UfYluyAe9/5w5P1dWMo416IW+ljC6adPRnXKX3EzUnkQHn6fvCqsXQAcQDiD2f4kHyQjSLEaPNxufIkHb+wzbA==",
   "success": true,
   "projectFilePath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.Application/Restaurants.Application.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "/home/kirki/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "/home/kirki/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "/home/kirki/.nuget/packages/mediatr/12.4.1/mediatr.12.4.1.nupkg.sha512",
+    "/home/kirki/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.1/microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.1/microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",

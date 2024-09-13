@@ -1,5 +1,6 @@
 using System;
 using AutoMapper;
+using Restaurants.Application.Commands;
 using Restaurants.Application.DTOs;
 using Restaurants.Domain.Entitites;
 
@@ -9,8 +10,13 @@ public class RestaurantProfile : Profile
 {
     public RestaurantProfile()
     {
-        //CreateRestaurantDTO to Restaurant
-        CreateMap<CreateRestaurantDTO, Restaurant>()
+        // UpdateRestaurantCommand to Restaurant
+        CreateMap<UpdateRestaurantCommand, Restaurant>()
+            .ForMember(dest => dest.Name, opt => opt.Condition((src, dest) => src.Name != null))
+            .ForMember(dest => dest.Description, opt => opt.Condition((src, dest) => src.Description != null))
+            .ForMember(dest => dest.HasDelivery, opt => opt.Condition((src, dest) => src.HasDelivery != null));
+        // CreateRestaurantDTO to Restaurant
+        CreateMap<CreateRestaurantCommand, Restaurant>()
             .ForMember(dest => dest.Address, opt => opt.MapFrom(
                 src => new Address{
                     City = src.City,
@@ -22,7 +28,7 @@ public class RestaurantProfile : Profile
                 src => (RestaurantCategory) Enum.Parse(typeof(RestaurantCategory), src.Category)
             ));
 
-        //Restaurant to RestaurantDTO
+        // Restaurant to RestaurantDTO
         CreateMap<Restaurant, RestaurantDTO>()
             .ForMember(dto => dto.Dishes, opt => opt.MapFrom(src => src.Dishes));
     }

@@ -1,9 +1,10 @@
 using System;
-using Restaurants.Domain.Entitites;
+using MediatR;
+using Restaurants.Application.DTOs;
 
-namespace Restaurants.Application.DTOs;
+namespace Restaurants.Application.Commands;
 
-public class CreateRestaurantDTO
+public class CreateRestaurantCommand : IRequest<RestaurantDTO?>
 {
     public required string Name { get; set; }
     public required string Description { get; set; }

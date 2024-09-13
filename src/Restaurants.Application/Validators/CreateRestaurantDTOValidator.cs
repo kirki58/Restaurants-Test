@@ -1,10 +1,11 @@
 using FluentValidation;
+using Restaurants.Application.Commands;
 using Restaurants.Application.DTOs;
 using Restaurants.Domain.Entitites;
 
 namespace Restaurants.Application.Validators;
 
-public class CreateRestaurantDTOValidator : AbstractValidator<CreateRestaurantDTO>
+public class CreateRestaurantDTOValidator : AbstractValidator<CreateRestaurantCommand>
 {
     public CreateRestaurantDTOValidator()
     {

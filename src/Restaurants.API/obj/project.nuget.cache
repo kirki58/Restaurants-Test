@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bMlC3mq+3V8Uw/NOmJYZvSpC+7sRhR6usY5KO7O2Y3TSRh+FnEoc/HAjAamR3nv6frQAoaF7Jw1cGtsik8OPzA==",
+  "dgSpecHash": "wGUx+RYXvSD8KtHWQuAcHqEawFIaaYXRDFFPgP483uDYSPNeIViWcL18uO+ldMs2SrBCfWI0yI7kTePro6YLbg==",
   "success": true,
   "projectFilePath": "/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/Restaurants.API.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "/home/kirki/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "/home/kirki/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "/home/kirki/.nuget/packages/mediatr/12.4.1/mediatr.12.4.1.nupkg.sha512",
+    "/home/kirki/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/home/kirki/.nuget/packages/microsoft.data.sqlclient/5.1.5/microsoft.data.sqlclient.5.1.5.nupkg.sha512",
