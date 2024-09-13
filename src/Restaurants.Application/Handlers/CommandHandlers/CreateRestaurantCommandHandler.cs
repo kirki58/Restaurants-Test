@@ -16,7 +16,7 @@ public class CreateRestaurantCommandHandler(
 {
     public async Task<RestaurantDTO?> Handle(CreateRestaurantCommand request, CancellationToken cancellationToken)
     {
-        logger.LogInformation("Creating new restaurant resource...");
+        logger.LogInformation("Creating new restaurant resource: {@Restaurant}", request);
         //Map CreateRestaurantDTO to Restaurant type than pass to repository.
         Restaurant restaurant;
         try{

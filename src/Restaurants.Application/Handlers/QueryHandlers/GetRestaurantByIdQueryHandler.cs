@@ -15,7 +15,7 @@ public class GetRestaurantByIdQueryHandler(
 {
     public async Task<RestaurantDTO> Handle(GetRestaurantByIdQuery request, CancellationToken cancellationToken)
     {
-        logger.LogInformation("Fetching Restaurant with ID: " + request.Id);
+        logger.LogInformation("Fetching Restaurant with ID: {RestaurantId}", request.Id);
         var restaurant = await repository.GetRestaurantByIdAsync(request.Id);
         // Map Restaurant type into RestaurantDTO type
         var restaurantDTO = mapper.Map<RestaurantDTO>(restaurant);

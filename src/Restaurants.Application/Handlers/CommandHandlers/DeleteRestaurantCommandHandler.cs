@@ -14,7 +14,7 @@ public class DeleteRestaurantCommandHandler(
 {
     public async Task<bool> Handle(DeleteRestaurantCommand request, CancellationToken cancellationToken)
     {
-        logger.LogInformation($"Trying to delete item with ID: {request.Id}");
+        logger.LogInformation("Trying to delete item with ID: {RestaurantID}", request.Id);
         var restaurant = await repository.GetRestaurantByIdAsync(request.Id);
 
         if(restaurant == null)

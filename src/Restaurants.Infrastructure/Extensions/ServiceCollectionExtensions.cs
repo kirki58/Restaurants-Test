@@ -9,7 +9,11 @@ namespace Restaurants.Infrastructure.Extensions;
 public static class ServiceCollectionExtensions
 {
     public static void AddInfraStructure(this IServiceCollection services){
-        services.AddDbContext<RestaurantsDbContext>( options => options.UseSqlServer(Environment.GetEnvironmentVariable("RestaurantsDb")) );
+        services.AddDbContext<RestaurantsDbContext>( options => 
+            options
+                .UseSqlServer(Environment.GetEnvironmentVariable("RestaurantsDb"))
+                .EnableSensitiveDataLogging()
+        );
 
         services.AddScoped<IRestaurantsRepository, RestaurantsRepository>();
     }

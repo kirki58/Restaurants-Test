@@ -79,3 +79,13 @@
 /home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/obj/Debug/net8.0/Restaurants.API.MvcApplicationPartsAssemblyInfo.cs
 /home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/MediatR.dll
 /home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/MediatR.Contracts.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Sinks.File.dll
