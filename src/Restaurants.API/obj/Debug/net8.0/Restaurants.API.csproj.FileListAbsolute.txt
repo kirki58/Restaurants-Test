@@ -89,3 +89,7 @@
 /home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Sinks.Console.dll
 /home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
 /home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/kirki/Documents/Repos/Restaurants-Test/src/Restaurants.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll

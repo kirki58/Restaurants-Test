@@ -4,7 +4,7 @@ using Restaurants.Application.DTOs;
 
 namespace Restaurants.Application.Commands;
 
-public class UpdateRestaurantCommand : IRequest<bool>
+public class UpdateRestaurantCommand : IRequest
 {
     public UpdateRestaurantCommand(int id, UpdateRestaurantDTO dto)
     {

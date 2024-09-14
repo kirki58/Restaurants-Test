@@ -4,7 +4,7 @@ using Restaurants.Application.DTOs;
 
 namespace Restaurants.Application.Commands;
 
-public class CreateRestaurantCommand : IRequest<RestaurantDTO?>
+public class CreateRestaurantCommand : IRequest<RestaurantDTO>
 {
     public required string Name { get; set; }
     public required string Description { get; set; }
