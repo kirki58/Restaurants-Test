@@ -5,7 +5,7 @@ namespace Restaurants.Application.DTOs;
 
 public class RestaurantDTO
 {
-    public int Id { get; set; }
+    public int Id {get; set; }
     public required string Name { get; set; }
     public required string Description { get; set; }
     public RestaurantCategory Category { get; set; }

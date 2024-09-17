@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using Restaurants.Application.DTOs;
 using Restaurants.Application.Commands;
 using Restaurants.Application.Queries;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Restaurants.API.Controllers
 {
     [Route("api/restaurants/{restaurantId}/[controller]")]
     [ApiController]
+    [Authorize]
     public class DishesController(IMediator mediator) : ControllerBase
     {
         [HttpPost]
