@@ -1,4 +1,3 @@
-using System;
 using Restaurants.Domain.Entitites;
 
 namespace Restaurants.Application.DTOs;
@@ -13,4 +12,5 @@ public class RestaurantDTO
     public Address? Address { get; set; }
     public List<DishDTO> Dishes { get; set; } = [];
     public int Tables { get; set; }
+    public UserDTO RestaurantAdmin { get; set; } = default!;
 }

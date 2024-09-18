@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,6 +26,11 @@ internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> optio
             .HasMany(r => r.Dishes)
             .WithOne()
             .HasForeignKey(d => d.RestaurantId);
+
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.OwnedRestaurants)
+            .WithOne(r => r.RestaurantAdmin)
+            .HasForeignKey(r => r.AdminId);
     }
 
     internal async static Task SeedData(RestaurantsDbContext context){
@@ -34,6 +40,24 @@ internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> optio
 
         if(!context.Restaurants.Any()){
             await context.Restaurants.AddRangeAsync(context.GetSeedData());
+            await context.SaveChangesAsync();
+        }
+
+        if(!context.Roles.Any()){
+            List<IdentityRole> roles = [
+                new IdentityRole{
+                    Id = Guid.NewGuid().ToString(),
+                    Name = AppRoles.User,
+                    NormalizedName = AppRoles.User.ToUpper(),
+                },
+                
+                new IdentityRole{
+                    Id = Guid.NewGuid().ToString(),
+                    Name = AppRoles.Admin,
+                    NormalizedName = AppRoles.Admin.ToUpper(),
+                }
+            ];
+            await context.Roles.AddRangeAsync(roles);
             await context.SaveChangesAsync();
         }
     }

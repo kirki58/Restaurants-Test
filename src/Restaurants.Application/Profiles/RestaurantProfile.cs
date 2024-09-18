@@ -1,7 +1,9 @@
 using System;
 using AutoMapper;
+using Microsoft.AspNetCore.SignalR;
 using Restaurants.Application.Commands;
 using Restaurants.Application.DTOs;
+using Restaurants.Application.Users;
 using Restaurants.Domain.Entitites;
 
 namespace Restaurants.Application.Profiles;
@@ -30,6 +32,9 @@ public class RestaurantProfile : Profile
 
         // Restaurant to RestaurantDTO
         CreateMap<Restaurant, RestaurantDTO>()
-            .ForMember(dto => dto.Dishes, opt => opt.MapFrom(src => src.Dishes));
+            .ForMember(dto => dto.Dishes, opt => opt.MapFrom(src => src.Dishes))
+            .ForMember(dest => dest.RestaurantAdmin, opt=> opt.MapFrom(src => 
+                new UserDTO(src.Id, src.Name, src.ContactEmail)
+            ));
     }
 }

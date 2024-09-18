@@ -1,4 +1,5 @@
 using System;
+using Restaurants.Domain.Entities;
 
 namespace Restaurants.Domain.Entitites;
 
@@ -16,6 +17,15 @@ public class Restaurant
     public List<Dish> Dishes { get; set; } = new();
 
     public int Tables { get; set; }
+
+    // A Restaurant can have only 1 admin
+    // A User can be the admin of many restaurants
+    // As such One-to-Many relationship
+
+    // Navigation property for the Restaurant Admin
+    public User RestaurantAdmin = default!;
+    // Actual Foreign Key to Restaurant Admin
+    public string AdminId = default!;
 }
 
 public enum RestaurantCategory{

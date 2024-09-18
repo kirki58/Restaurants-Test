@@ -1,10 +1,11 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Restaurants.Application.Commands;
 using Restaurants.Application.DTOs;
 using Restaurants.Application.Queries;
+using Restaurants.Domain.Entities;
+using Restaurants.Infrastructure.Autharization.Constants;
 
 namespace Restaurants.API.Controllers
 {
@@ -15,6 +16,7 @@ namespace Restaurants.API.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RestaurantDTO>))]
+        [Authorize(Roles = AppRoles.Admin)]
         public async Task<IActionResult> GetAllAsync(){
             var restaurants = await mediator.Send(new GetAllRestaurantsQuery());
             return Ok(restaurants);
@@ -23,6 +25,7 @@ namespace Restaurants.API.Controllers
         [HttpGet("{id}", Name = "GetRestaurant")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RestaurantDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Policy = AppPolicies.OlderThanEighteen)]
         public async Task<IActionResult> GetRestaurantByIdAsync([FromRoute]int id){
             var restaurant = await mediator.Send(new GetRestaurantByIdQuery(id));
             return Ok(restaurant);
@@ -31,6 +34,7 @@ namespace Restaurants.API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(RestaurantDTO))]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [Authorize(Policy = AppPolicies.IsTurkish)]
         public async Task<IActionResult> CreateRestaurantAsync([FromBody] CreateRestaurantCommand command){
             var newItem = await mediator.Send(command);
             return CreatedAtRoute("GetRestaurant", new{id = newItem.Id}, newItem);
