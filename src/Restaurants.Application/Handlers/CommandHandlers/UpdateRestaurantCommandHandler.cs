@@ -3,6 +3,8 @@ using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Restaurants.Application.Commands;
+using Restaurants.Application.Services;
+using Restaurants.Application.Users;
 using Restaurants.Domain.Entitites;
 using Restaurants.Domain.Exceptions;
 using Restaurants.Domain.Repositories;
@@ -11,7 +13,8 @@ namespace Restaurants.Application.Handlers;
 
 public class UpdateRestaurantCommandHandler(ILogger<UpdateRestaurantCommandHandler> logger,
  IRestaurantsRepository repository,
- IMapper mapper) : IRequestHandler<UpdateRestaurantCommand>
+ IMapper mapper,
+ IUserContext userContext) : IRequestHandler<UpdateRestaurantCommand>
 {
     public async Task Handle(UpdateRestaurantCommand request, CancellationToken cancellationToken)
     {
@@ -22,6 +25,12 @@ public class UpdateRestaurantCommandHandler(ILogger<UpdateRestaurantCommandHandl
             logger.LogWarning($"Restaurant with ID {request.Id} not found");
             throw new NotFoundException(nameof(Restaurant), request.Id.ToString());
         }
+
+        var user = userContext.GetCurrentUser();
+        if(!user.IsAuthorized(restaurant)){
+            throw new ForbidException(user.Id, nameof(this.GetType), nameof(Restaurant), request.Id.ToString());
+        }
+        
 
         mapper.Map(request, restaurant);
 

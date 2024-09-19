@@ -23,9 +23,9 @@ public class Restaurant
     // As such One-to-Many relationship
 
     // Navigation property for the Restaurant Admin
-    public User RestaurantAdmin = default!;
+    public User RestaurantAdmin {get; set;} = default!;
     // Actual Foreign Key to Restaurant Admin
-    public string AdminId = default!;
+    public string AdminId {get; set;} = default!;
 }
 
 public enum RestaurantCategory{

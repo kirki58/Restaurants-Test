@@ -31,6 +31,12 @@ public class ErrorHandlerMw(ILogger<ErrorHandlerMw> logger) : IMiddleware
             context.Response.StatusCode = 404;
             await context.Response.WriteAsync("Requested resource doesn't exist");
         }
+        catch(ForbidException ex){
+            logger.LogWarning($"[MWWARN] {ex.Message}");
+
+            context.Response.StatusCode = 403;
+            await context.Response.WriteAsync("Agent Unauthorized to access this endpoint/service.");
+        }
         catch(Exception ex){
             // Log error details to the serilog sink
             logger.LogTrace("Error Handler caught an exception through the middleware pipeline. Exception thrown.");

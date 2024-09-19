@@ -33,8 +33,8 @@ public class RestaurantProfile : Profile
         // Restaurant to RestaurantDTO
         CreateMap<Restaurant, RestaurantDTO>()
             .ForMember(dto => dto.Dishes, opt => opt.MapFrom(src => src.Dishes))
-            .ForMember(dest => dest.RestaurantAdmin, opt=> opt.MapFrom(src => 
-                new UserDTO(src.Id, src.Name, src.ContactEmail)
-            ));
+            .ForMember(dest => dest.RestaurantAdmin, opt => opt.MapFrom(src => new UserDTO(
+                src.RestaurantAdmin.Id, src.RestaurantAdmin.Nationality, src.RestaurantAdmin.Email
+            )));
     }
 }

@@ -11,12 +11,10 @@ namespace Restaurants.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class RestaurantsController(IMediator mediator) : ControllerBase
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RestaurantDTO>))]
-        [Authorize(Roles = AppRoles.Admin)]
         public async Task<IActionResult> GetAllAsync(){
             var restaurants = await mediator.Send(new GetAllRestaurantsQuery());
             return Ok(restaurants);
@@ -25,7 +23,6 @@ namespace Restaurants.API.Controllers
         [HttpGet("{id}", Name = "GetRestaurant")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RestaurantDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [Authorize(Policy = AppPolicies.OlderThanEighteen)]
         public async Task<IActionResult> GetRestaurantByIdAsync([FromRoute]int id){
             var restaurant = await mediator.Send(new GetRestaurantByIdQuery(id));
             return Ok(restaurant);
@@ -34,7 +31,8 @@ namespace Restaurants.API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(RestaurantDTO))]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        [Authorize(Policy = AppPolicies.IsTurkish)]
+        [Authorize(Policy = AppPolicies.HasNationality)]
+        [Authorize(Policy = AppPolicies.OlderThanEighteen)]
         public async Task<IActionResult> CreateRestaurantAsync([FromBody] CreateRestaurantCommand command){
             var newItem = await mediator.Send(command);
             return CreatedAtRoute("GetRestaurant", new{id = newItem.Id}, newItem);
@@ -43,6 +41,7 @@ namespace Restaurants.API.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize] // Authorizes Admin or restaurant owner internally 
         public async Task<IActionResult> DeleteRestaurantAsync([FromRoute] int id){
             await mediator.Send(new DeleteRestaurantCommand(id));
 
@@ -52,6 +51,7 @@ namespace Restaurants.API.Controllers
         [HttpPatch("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize] // Authorizes Admin or restaurant owner internally 
         public async Task<IActionResult> UpdateRestaurantAsync([FromRoute] int id, [FromBody] UpdateRestaurantDTO dto){
             UpdateRestaurantCommand command = new UpdateRestaurantCommand(id, dto);
             await mediator.Send(command);

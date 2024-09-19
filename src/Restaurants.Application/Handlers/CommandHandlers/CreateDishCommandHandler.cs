@@ -3,6 +3,8 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using Restaurants.Application.Commands;
 using Restaurants.Application.DTOs;
+using Restaurants.Application.Services;
+using Restaurants.Application.Users;
 using Restaurants.Domain.Entitites;
 using Restaurants.Domain.Exceptions;
 using Restaurants.Domain.Repositories;
@@ -13,7 +15,8 @@ public class CreateDishCommandHandler(
 ILogger<CreateDishCommandHandler> logger,
 IMapper mapper,
 IRestaurantsRepository restaurantsRepository,
-IDishesRepository dishesRepository) : IRequestHandler<CreateDishCommand, DishDTO>
+IDishesRepository dishesRepository,
+IUserContext userContext) : IRequestHandler<CreateDishCommand, DishDTO>
 {
     public async Task<DishDTO> Handle(CreateDishCommand request, CancellationToken cancellationToken)
     {
@@ -22,6 +25,11 @@ IDishesRepository dishesRepository) : IRequestHandler<CreateDishCommand, DishDTO
         var restaurant = await restaurantsRepository.GetRestaurantByIdAsync(request.RestaurantId);
         if(restaurant == null){
             throw new NotFoundException(nameof(Restaurant), request.RestaurantId.ToString());
+        }
+
+        var user = userContext.GetCurrentUser();
+        if(!user.IsAuthorized(restaurant)){
+            throw new ForbidException(user.Id, nameof(this.GetType), nameof(Restaurant), request.RestaurantId.ToString());
         }
 
         Dish dish;

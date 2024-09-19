@@ -9,13 +9,13 @@ namespace Restaurants.API.Controllers
 {
     [Route("api/restaurants/{restaurantId}/[controller]")]
     [ApiController]
-    [Authorize]
     public class DishesController(IMediator mediator) : ControllerBase
     {
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize] // Authorizes Admin or restaurant owner internally 
         public async Task<IActionResult> CreateDishAsync([FromRoute] int restaurantId ,CreateDishDTO dto){
             var command = new CreateDishCommand(restaurantId, dto);
             var newItem = await mediator.Send(command);
@@ -46,6 +46,7 @@ namespace Restaurants.API.Controllers
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize] // Authorizes Admin or restaurant owner internally 
         public async Task<IActionResult> DeleteAllDishesAsync([FromRoute] int restaurantId){
             var command = new DeleteDishesCommand(restaurantId);
             await mediator.Send(command);
@@ -56,6 +57,7 @@ namespace Restaurants.API.Controllers
         [HttpDelete("{dishId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize] // Authorizes Admin or restaurant owner internally 
         public async Task<IActionResult> DeleteDishByIdAsync([FromRoute] int restaurantId, [FromRoute] int dishId){
             var command = new DeleteDishByIdCommand(restaurantId, dishId);
             await mediator.Send(command);

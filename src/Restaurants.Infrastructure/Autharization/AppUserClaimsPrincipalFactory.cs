@@ -24,7 +24,6 @@ public class AppUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<User, Id
         if(user.BirthDate != null){
             id.AddClaim(new Claim(AppClaimTypes.BirthDate, user.BirthDate.Value.ToString("yyyy-MM-dd")));
         }
-
         return new ClaimsPrincipal(id);
     }
 }
