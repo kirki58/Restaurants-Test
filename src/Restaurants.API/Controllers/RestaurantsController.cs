@@ -15,6 +15,7 @@ namespace Restaurants.API.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RestaurantDTO>))]
+        [Authorize(Policy = AppPolicies.OwnsTwoOrMoreRestaurants)]
         public async Task<IActionResult> GetAllAsync(){
             var restaurants = await mediator.Send(new GetAllRestaurantsQuery());
             return Ok(restaurants);

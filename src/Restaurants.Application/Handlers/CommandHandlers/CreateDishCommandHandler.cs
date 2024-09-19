@@ -29,7 +29,7 @@ IUserContext userContext) : IRequestHandler<CreateDishCommand, DishDTO>
 
         var user = userContext.GetCurrentUser();
         if(!user.IsAuthorized(restaurant)){
-            throw new ForbidException(user.Id, nameof(this.GetType), nameof(Restaurant), request.RestaurantId.ToString());
+            throw new ForbidException(user.Id, this.GetType().Name, nameof(Restaurant), request.RestaurantId.ToString());
         }
 
         Dish dish;

@@ -6,6 +6,7 @@ using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Autharization;
 using Restaurants.Infrastructure.Autharization.Constants;
+using Restaurants.Infrastructure.Autharization.Requirements;
 using Restaurants.Infrastructure.Persistence;
 using Restaurants.Infrastructure.Repositories;
 
@@ -46,7 +47,8 @@ public static class ServiceCollectionExtensions
             }
 
             return passedYears >= 18;
-        }));
+        }))
+        .AddPolicy(AppPolicies.OwnsTwoOrMoreRestaurants, policy => policy.AddRequirements(new RestaurantOwnerAuthorization(2)));
         
         services.AddScoped<IRestaurantsRepository, RestaurantsRepository>();
         services.AddScoped<IDishesRepository, DishesRepository>();

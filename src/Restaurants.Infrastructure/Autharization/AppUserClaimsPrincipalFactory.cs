@@ -1,4 +1,3 @@
-using System;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
@@ -24,6 +23,8 @@ public class AppUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<User, Id
         if(user.BirthDate != null){
             id.AddClaim(new Claim(AppClaimTypes.BirthDate, user.BirthDate.Value.ToString("yyyy-MM-dd")));
         }
+
+        id.AddClaim(new Claim(AppClaimTypes.OwnsNRestaurants, user.OwnedRestaurants.Count.ToString()));
         return new ClaimsPrincipal(id);
     }
 }

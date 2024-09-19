@@ -26,7 +26,7 @@ public class DeleteDishesCommandHandler(
         }
         var user = userContext.GetCurrentUser();
         if(!user.IsAuthorized(restaurant)){
-            throw new ForbidException(user.Id, nameof(this.GetType), nameof(Restaurant), request.RestaurantId.ToString());
+            throw new ForbidException(user.Id, this.GetType().Name, nameof(Restaurant), request.RestaurantId.ToString());
         }
 
         await dishesRepository.ClearDishesAsync(restaurant.Dishes);

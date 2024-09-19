@@ -29,7 +29,7 @@ public class DeleteRestaurantCommandHandler(
 
         var user = userContext.GetCurrentUser();
         if(!user.IsAuthorized(restaurant)){
-            throw new ForbidException(user.Id, nameof(this.GetType), nameof(Restaurant), request.Id.ToString());
+            throw new ForbidException(user.Id, this.GetType().Name, nameof(Restaurant), request.Id.ToString());
         }
         await repository.DeleteRestaurantAsync(restaurant);
     }
