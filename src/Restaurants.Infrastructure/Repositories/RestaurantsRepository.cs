@@ -8,9 +8,15 @@ namespace Restaurants.Infrastructure.Repositories;
 
 internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaurantsRepository
 {
-    public async Task<IEnumerable<Restaurant>> GetAllAsync()
-    {
-        return await dbContext.Restaurants.ToListAsync();
+    public async Task<IEnumerable<Restaurant>> GetAllAsync(string? searchParams, int? category)
+    { 
+        return await dbContext.Restaurants
+            .Where(r => 
+                (searchParams == null || r.Name.ToLower().Contains(searchParams.ToLower()) ||  r.Description.ToLower().Contains(searchParams.ToLower()))
+                &&
+                (category == null || (int) r.Category == category)
+            )
+            .ToListAsync();
     }
 
     public async Task<Restaurant?> GetRestaurantByIdAsync(int id){

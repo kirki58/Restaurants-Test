@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Restaurants.Application.Commands;
 using Restaurants.Application.DTOs;
 using Restaurants.Application.Queries;
-using Restaurants.Domain.Entities;
 using Restaurants.Infrastructure.Autharization.Constants;
 
 namespace Restaurants.API.Controllers
@@ -15,9 +14,8 @@ namespace Restaurants.API.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RestaurantDTO>))]
-        [Authorize(Policy = AppPolicies.OwnsTwoOrMoreRestaurants)]
-        public async Task<IActionResult> GetAllAsync(){
-            var restaurants = await mediator.Send(new GetAllRestaurantsQuery());
+        public async Task<IActionResult> GetAllAsync([FromQuery] string? searchParams, [FromQuery] int? category){
+            var restaurants = await mediator.Send(new GetAllRestaurantsQuery(searchParams, category));
             return Ok(restaurants);
         }
 
