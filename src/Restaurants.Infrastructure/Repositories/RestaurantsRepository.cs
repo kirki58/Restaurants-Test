@@ -1,5 +1,7 @@
 using System;
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Restaurants.Application.DTOs;
 using Restaurants.Domain.Entitites;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Persistence;
@@ -8,7 +10,7 @@ namespace Restaurants.Infrastructure.Repositories;
 
 internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaurantsRepository
 {
-    public async Task<(IEnumerable<Restaurant>, int)> GetAllAsync(int pageSize, int pageNo, string? searchPhrase, int? category)
+    public async Task<(IEnumerable<Restaurant>, int)> GetAllAsync(int pageSize, int pageNo, string? searchPhrase, int? category, string? sortBy, bool? sortDesc)
     {
         var baseQuery = dbContext.Restaurants
             .Where(r => 
@@ -18,6 +20,17 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
             );
 
         var count = await baseQuery.CountAsync();
+
+        var sortByColumnPredicates = new Dictionary<string, Expression<Func<Restaurant, object>>>
+        {
+            {nameof(RestaurantDTO.Name) , r => r.Name},
+            {nameof(RestaurantDTO.Tables), r=> r.Tables},
+            {nameof(RestaurantDTO.Dishes), r=> r.Dishes.Count}
+        };
+
+        if(sortBy != null){
+            baseQuery = sortDesc == true ? baseQuery.OrderByDescending(sortByColumnPredicates[sortBy]) : baseQuery.OrderBy(sortByColumnPredicates[sortBy]);
+        }
 
         var result = await baseQuery
                     .Skip((pageNo -1) * pageSize)
