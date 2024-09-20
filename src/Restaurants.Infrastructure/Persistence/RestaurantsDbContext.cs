@@ -9,7 +9,7 @@ namespace Restaurants.Infrastructure.Persistence;
 
 
 // IdentityDbContext inherits DbContext, it has built-in auth logic
-internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options) : IdentityDbContext<User>(options)
+internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options, IPasswordHasher<User> passwordHasher) : IdentityDbContext<User>(options)
 {
     internal DbSet<Restaurant> Restaurants { get; set; }
     internal DbSet<Dish> Dishes { get; set; }
@@ -36,12 +36,7 @@ internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> optio
         // Ensure that the DB is up to date before seeding data
         // Pending migrations are directly applied (if any)
         await context.Database.MigrateAsync();
-
-        if(!context.Restaurants.Any()){
-            await context.Restaurants.AddRangeAsync(context.GetSeedData());
-            await context.SaveChangesAsync();
-        }
-
+        
         if(!context.Roles.Any()){
             List<IdentityRole> roles = [
                 new IdentityRole{
@@ -59,41 +54,5 @@ internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> optio
             await context.Roles.AddRangeAsync(roles);
             await context.SaveChangesAsync();
         }
-    }
-
-    private IEnumerable<Restaurant> GetSeedData(){
-        List<Restaurant> seedData = [
-            new Restaurant {
-                Name = "McDonald's",
-                Description = "Amazing burger fast-food chain",
-                Category = RestaurantCategory.FastFood,
-                HasDelivery = true,
-                ContactNumber = "111",
-                ContactEmail = "sarigazi@mcdonals.com",
-                Address = new Address{City = "Istanbul", Street = "Demokrasi St.", PostalCode="3434"},
-                Dishes = [
-                    new Dish{Name = "BigMac", Description = "Amazing burger", Price=230m},
-                    new Dish{Name= "BBQ Burger", Description="Burger with BBQ sauce", Price=200m},
-                    new Dish{Name= "Ice Cream", Description="MC creamy ice cream", Price=50m}
-                ],
-                Tables = 50
-            },
-            new Restaurant {
-                Name = "Murat Chef",
-                Description = "Perfect Turkish steaks",
-                Category = RestaurantCategory.Turkish,
-                HasDelivery = true,
-                ContactNumber = "222",
-                ContactEmail = "muratchef@business.com",
-                Address = new Address{City = "Istanbul", Street = "Barajyolu Blv.", PostalCode="3434"},
-                Dishes = [
-                    new Dish{Name = "Medium Steak", Description = "Medium-cooked steak", Price=500m},
-                    new Dish{Name= "Mayo Steak", Description="Steak with awesome mayo sauce", Price=600m},
-                    new Dish{Name= "Şiş Kebap", Description="Turkish traditional beef shish", Price=400m}
-                ]
-            }
-            
-        ];
-        return seedData;
     }
 }

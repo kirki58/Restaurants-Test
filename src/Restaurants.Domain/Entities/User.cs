@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Restaurants.Domain.Entitites;
 
 namespace Restaurants.Domain.Entities;
