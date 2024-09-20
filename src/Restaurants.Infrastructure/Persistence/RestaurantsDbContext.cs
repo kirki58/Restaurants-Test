@@ -9,7 +9,7 @@ namespace Restaurants.Infrastructure.Persistence;
 
 
 // IdentityDbContext inherits DbContext, it has built-in auth logic
-internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options, IPasswordHasher<User> passwordHasher) : IdentityDbContext<User>(options)
+internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options) : IdentityDbContext<User>(options)
 {
     internal DbSet<Restaurant> Restaurants { get; set; }
     internal DbSet<Dish> Dishes { get; set; }

@@ -3,6 +3,13 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+# Ignore .vscode
+.vscode
+
+# Executables
+**/bin/
+**/obj/
+
 # dotenv files
 .env
 
