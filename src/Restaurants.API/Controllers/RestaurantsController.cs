@@ -14,9 +14,9 @@ namespace Restaurants.API.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RestaurantDTO>))]
-        public async Task<IActionResult> GetAllAsync([FromQuery] string? searchParams, [FromQuery] int? category){
-            var restaurants = await mediator.Send(new GetAllRestaurantsQuery(searchParams, category));
-            return Ok(restaurants);
+        public async Task<IActionResult> GetAllAsync([FromQuery] GetAllRestaurantsQuery query){
+            var pagedResult = await mediator.Send(query);
+            return Ok(pagedResult);
         }
 
         [HttpGet("{id}", Name = "GetRestaurant")]

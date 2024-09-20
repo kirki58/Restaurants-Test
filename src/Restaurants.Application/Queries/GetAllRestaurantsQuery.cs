@@ -1,10 +1,13 @@
 using MediatR;
+using Restaurants.API.DTOs.Common;
 using Restaurants.Application.DTOs;
 
 namespace Restaurants.Application.Queries;
 
-public class GetAllRestaurantsQuery(string? searchParams, int? restaurantCategory) : IRequest<IEnumerable<RestaurantDTO>>
+public class GetAllRestaurantsQuery : IRequest<PagedResult<RestaurantDTO>>
 {
-    public string? SearchParams { get; set; } = searchParams;
-    public int? Category { get; set; } = restaurantCategory; 
+    public int PageSize { get; set; }
+    public int PageNo { get; set; }
+    public string? SearchPhrase { get; set; }
+    public int? Category { get; set; } 
 }

@@ -8,15 +8,23 @@ namespace Restaurants.Infrastructure.Repositories;
 
 internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaurantsRepository
 {
-    public async Task<IEnumerable<Restaurant>> GetAllAsync(string? searchParams, int? category)
-    { 
-        return await dbContext.Restaurants
+    public async Task<(IEnumerable<Restaurant>, int)> GetAllAsync(int pageSize, int pageNo, string? searchPhrase, int? category)
+    {
+        var baseQuery = dbContext.Restaurants
             .Where(r => 
-                (searchParams == null || r.Name.ToLower().Contains(searchParams.ToLower()) ||  r.Description.ToLower().Contains(searchParams.ToLower()))
+                (searchPhrase == null || r.Name.ToLower().Contains(searchPhrase.ToLower()) ||  r.Description.ToLower().Contains(searchPhrase.ToLower()))
                 &&
                 (category == null || (int) r.Category == category)
-            )
-            .ToListAsync();
+            );
+
+        var count = await baseQuery.CountAsync();
+
+        var result = await baseQuery
+                    .Skip((pageNo -1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+
+        return (result, count);
     }
 
     public async Task<Restaurant?> GetRestaurantByIdAsync(int id){
