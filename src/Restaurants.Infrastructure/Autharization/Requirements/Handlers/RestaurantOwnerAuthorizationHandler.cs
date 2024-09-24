@@ -1,10 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
-using Restaurants.Application.Users;
 using Restaurants.Infrastructure.Autharization.Constants;
 
 namespace Restaurants.Infrastructure.Autharization.Requirements.Handlers;
 
-public class RestaurantOwnerAuthorizationHandler(IUserContext userContext) : AuthorizationHandler<RestaurantOwnerAuthorization>
+internal class RestaurantOwnerAuthorizationHandler() : AuthorizationHandler<RestaurantOwnerAuthorization>
 {
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, RestaurantOwnerAuthorization requirement)
     {
