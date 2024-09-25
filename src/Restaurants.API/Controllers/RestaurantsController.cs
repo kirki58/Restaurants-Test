@@ -18,7 +18,7 @@ namespace Restaurants.API.Controllers
             var pagedResult = await mediator.Send(query);
             return Ok(pagedResult);
         }
-
+        [Authorize]
         [HttpGet("{id}", Name = "GetRestaurant")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RestaurantDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

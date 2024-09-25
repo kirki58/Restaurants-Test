@@ -5,7 +5,6 @@ using Moq;
 using Restaurants.Application.Commands;
 using Restaurants.Application.DTOs;
 using Restaurants.Application.Handlers;
-using Restaurants.Application.Test.Handlers.InMemoryRepository;
 using Restaurants.Application.Users;
 using Restaurants.Domain.Entitites;
 using Restaurants.Domain.Repositories;
@@ -21,10 +20,8 @@ public class CreateRestaurantCommandHandlerTests
         var userContextMock = new Mock<IUserContext>();
         userContextMock.Setup(u => u.GetCurrentUser()).Returns(currentUser);
 
-        var memoryRepository = new InMemoryRestaurantsRepository();
-
         var repositoryMock = new Mock<IRestaurantsRepository>();
-        repositoryMock.Setup(r => r.CreateRestaurantAsync(It.IsAny<Restaurant>()))!.ReturnsAsync((Restaurant restaurant) => memoryRepository.CreateRestaurantAsync(restaurant));
+        repositoryMock.Setup(r => r.CreateRestaurantAsync(It.IsAny<Restaurant>()))!.ReturnsAsync((Restaurant restaurant) => restaurant);
 
         var loggerMock = new Mock<ILogger<CreateRestaurantCommandHandler>>();
 

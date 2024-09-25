@@ -1,5 +1,4 @@
 using AutoMapper;
-using Castle.Core.Logging;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -7,7 +6,6 @@ using Restaurants.Application.Commands;
 using Restaurants.Application.DTOs;
 using Restaurants.Application.Handlers;
 using Restaurants.Application.Profiles;
-using Restaurants.Application.Test.Handlers.InMemoryRepository;
 using Restaurants.Application.Users;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Entitites;

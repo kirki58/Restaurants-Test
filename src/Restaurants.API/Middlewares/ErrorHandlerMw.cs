@@ -44,7 +44,7 @@ public class ErrorHandlerMw(ILogger<ErrorHandlerMw> logger) : IMiddleware
 
             // Return a broad message in the response body
             context.Response.StatusCode = 500;
-            await context.Response.WriteAsync("An unexpected error occurred.");
+            await context.Response.WriteAsync("An unexpected error ocurred");
         }
     }
 }
